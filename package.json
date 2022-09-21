@@ -1,10 +1,10 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
+  "name": "two-left-feet",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",

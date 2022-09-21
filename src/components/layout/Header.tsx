@@ -1,31 +1,84 @@
-import * as React from 'react';
+import Link from 'next/dist/client/link'
 
-import UnstyledLink from '@/components/links/UnstyledLink';
+const navItems = [
+  {
+    text: 'Home',
+    href: '/',
+  },
+  {
+    text: 'About',
+    href: 'about',
+  },
+  {
+    text: 'Classes',
+    href: 'classes',
+  },
+  {
+    text: 'Private Lessons',
+    href: 'private_lessons',
+  },
+  {
+    text: 'Events',
+    href: 'events',
+  },
+  {
+    text: 'Wedding Dances',
+    href: 'wedding_dances',
+  },
+  {
+    text: 'Studio Rental',
+    href: 'studio_rental',
+  },
+  {
+    text: 'Calendar',
+    href: 'calendar',
+  },
+  {
+    text: 'Contact',
+    href: 'contact',
+  },
+]
 
-const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
+const StudioInfo = () => (
+  <ul className='hidden w-64 self-center text-xs 2xl:block'>
+    <li>1405 Unit N Kiln Creek Parkway</li>
+    <li>Newport News, VA 23602</li>
+    <li>Phone: 757.813.4371</li>
+  </ul>
+)
 
-export default function Header() {
-  return (
-    <header className='sticky top-0 z-50 bg-white'>
-      <div className='layout flex h-14 items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
-        </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
-}
+const Nav = () => (
+  <>
+    <div className='block'>
+      <ul className=''>
+        {navItems.map((link, idx) => (
+          <li
+            key={idx}
+            className='inline select-none p-2 text-xs hover:cursor-pointer hover:text-teal-600'
+          >
+            <Link href={link.href}>{link.text}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </>
+)
+
+const Logo = () => (
+  <div className="flex flex-col items-center justify-center font-['Bilbo'] text-teal-600">
+    <div className='text-3xl'>Two Left Feet</div>
+    <div className='text-xl'>Dance Studio</div>
+  </div>
+)
+
+const Header = () => (
+  <div className='flex h-20 items-end justify-between'>
+    <div className='flex w-full items-end justify-between 2xl:justify-start'>
+      <Logo />
+      <Nav />
+    </div>
+    <StudioInfo />
+  </div>
+)
+
+export default Header

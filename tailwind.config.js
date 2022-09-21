@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
+        'bilbo': ['Bilbo', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -53,4 +54,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms')],
-};
+}

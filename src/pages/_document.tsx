@@ -4,12 +4,12 @@ import Document, {
   Html,
   Main,
   NextScript,
-} from 'next/document';
+} from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
   }
 
   render() {
@@ -23,14 +23,24 @@ class MyDocument extends Document {
             type='font/woff2'
             crossOrigin='anonymous'
           />
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link
+            rel='preconnect'
+            href='https://fonts.gstatic.com'
+            crossOrigin='anonymous'
+          />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Bilbo&display=swap'
+            rel='stylesheet'
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument
