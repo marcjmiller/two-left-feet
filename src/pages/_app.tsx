@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 
 import '@/styles/globals.css'
+import '@/styles/react-big-calendar.css'
 
 import Layout from '@/components/layout/Layout'
 
