@@ -10,7 +10,9 @@ interface OwnProps {
 const Layout: FC<OwnProps> = ({ children }: { children: React.ReactNode }) => (
   <div className='flex h-screen flex-col justify-between p-2'>
     <Header />
-    <div className='flex justify-center'>{children}</div>
+    <div className='mx-auto h-full w-3/4 items-center overflow-hidden p-8'>
+      {children}
+    </div>
     <Footer />
   </div>
 )

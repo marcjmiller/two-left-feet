@@ -1,4 +1,4 @@
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 
 const navItems = [
   {
@@ -40,8 +40,8 @@ const navItems = [
 ]
 
 const StudioInfo = () => (
-  <ul className='hidden w-64 self-center text-xs 2xl:block'>
-    <li>1405 Unit N Kiln Creek Parkway</li>
+  <ul className='hidden w-64 self-center text-sm 2xl:block'>
+    <li>1405 Kiln Creek Parkway</li>
     <li>Newport News, VA 23602</li>
     <li>Phone: 757.813.4371</li>
   </ul>
@@ -54,7 +54,7 @@ const Nav = () => (
         {navItems.map((link, idx) => (
           <li
             key={idx}
-            className='inline select-none p-2 text-xs hover:cursor-pointer hover:text-teal-600'
+            className='inline select-none p-2 text-sm hover:cursor-pointer hover:text-teal-600'
           >
             <Link href={link.href}>{link.text}</Link>
           </li>
@@ -66,7 +66,7 @@ const Nav = () => (
 
 const Logo = () => (
   <div className="flex flex-col items-center justify-center font-['Bilbo'] text-teal-600">
-    <div className='text-3xl'>Two Left Feet</div>
+    <div className='text-4xl'>Two Left Feet</div>
     <div className='text-xl'>Dance Studio</div>
   </div>
 )
