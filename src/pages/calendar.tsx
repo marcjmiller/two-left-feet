@@ -19,13 +19,23 @@ const localizer = dateFnsLocalizer({
   locales,
 })
 
+const events = [
+  {
+    id: 1,
+    title: 'test event',
+    allDay: false,
+    start: new Date(2022, 8, 23, 9, 30),
+    end: new Date(2022, 8, 23, 12, 30),
+  },
+]
+
 const CalendarPage = () => (
   <div className='h-full'>
     <Seo templateTitle='Calendar' />
     <div className='py-2 text-xl font-bold'>Calendar</div>
     <Calendar
       localizer={localizer}
-      events={[]}
+      events={events}
       startAccessor='start'
       endAccessor='end'
       style={{ height: 500 }}
